@@ -54,3 +54,31 @@ def parse_and_check_tickets(url_openned):
             exit()
     display.display("Tickets were not available at :" + str(datetime.datetime.now()))
     return
+
+def fetch_html():
+    headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+           'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+           'Accept-Encoding': 'none',
+           'Accept-Language': 'en-US,en;q=0.8',
+           'Connection': 'keep-alive'}
+        
+    url_request = urllib2.Request(url=url, headers=headers)
+    try:
+        url_openned= urllib2.urlopen(url=url_request)
+    except urllib2.HTTPError as e:
+        display.display(e.code)
+        display.display(e.read())
+    
+    parse_and_check_tickets(url_openned)
+    return
+
+def main():
+
+    while True:
+        fetch_html()
+        time.sleep(300)
+
+if __name__ == "__main__":
+    main()
+
