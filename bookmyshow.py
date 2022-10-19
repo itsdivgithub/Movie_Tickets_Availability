@@ -9,7 +9,7 @@ import datetime
 from IPython import display
 from bs4 import BeautifulSoup
 
-url='https://in.bookmyshow.com/buytickets/act-1978-bengaluru/movie-bang-ET00300389-MT/20201128'
+url='https://in.bookmyshow.com/buytickets/brahmastra-3d-hindi-kanpur/movie-kanp-ET00337403-MT/20221020'
 cinema='PVR: South X Mall, Kanpur'
 
 def open_url():
@@ -41,7 +41,7 @@ def parse_and_check_tickets(url_openned):
     url_soup= BeautifulSoup(url_openned , features="html5lib")
     a_class = url_soup.find_all("a", {"class": "_venue-name"})
     a_class_str = str(a_class)
-    a_class_soup= Beautiful_soup(a_class_str, features="html5lib")
+    a_class_soup= BeautifulSoup(a_class_str, features="html5lib")
     strong= a_class_soup.find_all("strong")
     strong_str= str(strong)
 
@@ -77,7 +77,7 @@ def main():
 
     while True:
         fetch_html()
-        time.sleep(300)
+        time.sleep(15)
 
 if __name__ == "__main__":
     main()
