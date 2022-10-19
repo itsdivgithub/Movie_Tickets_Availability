@@ -36,4 +36,4 @@ def create_popup():
 
     return
 
-    
+def parse_and_check_tickets(url_openned, features="html5lib"):
