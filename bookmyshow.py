@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 #Specify the exact webpage URL holding the record of cinemas for the
 #particular date and picture and in cinema put name of theater you want to look for.
 #specifying complete cinema name is not necessary as this "cinema" will be searched as a RegEx.
-url='https://in.bookmyshow.com/buytickets/brahmastra-3d-hindi-kanpur/movie-kanp-ET00337403-MT/20221020'
+url='https://in.bookmyshow.com/buytickets/ram-setu-kanpur/movie-kanp-ET00300917-MT/20221025'
 cinema='PVR: South X Mall, Kanpur'
 
 #If tickets will be available then this function is called.
@@ -116,7 +116,7 @@ def main():
 
     while True:
         fetch_html()
-        time.sleep(15)
+        time.sleep(300)
 
 if __name__ == "__main__":
     main()
